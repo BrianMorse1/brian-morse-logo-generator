@@ -1,0 +1,26 @@
+{
+  "name": "brian-morse-logo-generator",
+  "version": "1.0.0",
+  "description": "logo generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianMorse1/brian-morse-logo-generator.git"
+  },
+  "author": "Brian Morse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianMorse1/brian-morse-logo-generator/issues"
+  },
+  "homepage": "https://github.com/BrianMorse1/brian-morse-logo-generator#readme",
+  "dependencies": {
+    "inquirer": "^9.1.5",
+    "jest": "latest"
+  }
+}
