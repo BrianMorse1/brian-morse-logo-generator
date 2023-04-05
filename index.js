@@ -1,7 +1,8 @@
 // required imports (files and modules)
-const inquirer = require("inquirer");
+const inquirer = require('inquirer');
 const fs = require("fs");
 const shapes = require("./lib/shapes.js");
+import { triangleTemplate, circleTemplate, squareTemplate } from './lib/shapes.js';
 
 //function for taking user input and assigning the data to a variable to be used later.
 let answers;
@@ -30,34 +31,16 @@ const input =async () => {
           type: "input",
           name: "background",
           message: "Enter a color keyword or hex number for the background:",
-          validate: function (input) {
-            return input.match(/^#([0-9a-f]{3}){1,2}$/i) ||
-              ["red", "blue", "green"].includes(input)
-              ? true
-              : "Please enter a valid color keyword or hex number.";
-          },
         },
         {
           type: "input",
           name: "textColor",
-          message: "Enter a color keyword or hex number for the text:",
-          validate: function (input) {
-            return input.match(/^#([0-9a-f]{3}){1,2}$/i) ||
-              ["red", "blue", "green"].includes(input)
-              ? true
-              : "Please enter a valid color keyword or hex number.";
-          },
+          message: "Enter a color keyword or hex number for the text:",         
         },
         {
           type: "input",
           name: "shapeColor",
           message: "Enter a color keyword or hex number for the shape:",
-          validate: function (input) {
-            return input.match(/^#([0-9a-f]{3}){1,2}$/i) ||
-              ["red", "blue", "green"].includes(input)
-              ? true
-              : "Please enter a valid color keyword or hex number.";
-          },
         },
       ])
       .then((answers) => {
@@ -80,15 +63,15 @@ const generateLogo = async () => {
     const shapeColor = answers.shapeColor;
 //conditional statement for shape selection
     if (shape === "triangle") {
-        fs.writeFile("triangel.html", shapes.triangleTemplate(
+        fs.writeFile("logo.svg", shapes.triangleTemplate(
             letters, backgroundColor, textColor, shapeColor
         ));
         } else if (shape === "square") {
-            fs.writeFile("square.html", shapes.squareTemplate(
+            fs.writeFile("logo.svg", shapes.squareTemplate(
                 letters, backgroundColor, textColor, shapeColor
             ));
             } else if (shape === "circle") {
-                fs.writeFile("circle.html", shapes.circleTemplate(
+                fs.writeFile("logo.svg", shapes.circleTemplate(
                     letters, backgroundColor, textColor, shapeColor
                     ));
     }

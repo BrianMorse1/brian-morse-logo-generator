@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/BrianMorse1/brian-morse-logo-generator#readme",
   "dependencies": {
-    "inquirer": "^9.1.5",
+    "inquirer": "^8.2.4",
     "jest": "latest"
   }
 }
